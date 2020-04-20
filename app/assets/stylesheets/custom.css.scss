@@ -22,3 +22,17 @@
 .center {
   text-align: center;
 }
+
+.jumbotron{
+  background-image: asset-url('background2.jpg');
+  background-size: cover;
+  height: 600px;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold
+}
