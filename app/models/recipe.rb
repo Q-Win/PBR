@@ -1,3 +1,3 @@
 class Recipe < ApplicationRecord
-
-end 
+  validates :name, presence: true
+end
