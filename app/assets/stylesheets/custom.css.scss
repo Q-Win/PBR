@@ -1,3 +1,4 @@
+
 @import "bootstrap";
 
 #home{
@@ -10,6 +11,14 @@
 }
 
 #home:hover{
-  color: blue;
+  color: red;
   text-decoration: none;
+}
+
+#navbar{
+  background-color: #013B15;
+}
+
+.center {
+  text-align: center;
 }
