@@ -17,7 +17,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
     get recipes_path
     assert_template 'recipes/index'
     assert_match @recipe.name, response.body
-    assert_match @recipe2.name, repsonse.body
+    assert_match @recipe2.name, response.body
   end
 
 end
