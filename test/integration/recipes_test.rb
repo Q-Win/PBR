@@ -34,6 +34,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
 
   test "reject invalid submissions" do
     get new_recipe_path
+    assert_template 'recipes/new'
   end
 
 end
