@@ -1,5 +1,5 @@
 <%= render 'shared/page_title', title: "create a new recipe" %>
-
+<%= render 'shared/errors', obj: @recipe %>
 
 <%= form_for @recipe do |f|%>
   <div class="form-group">
