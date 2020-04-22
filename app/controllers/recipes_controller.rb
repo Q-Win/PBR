@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-   before_action :set_recipe, only: [:show, :edit, :update]
+   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   def index
     @recipes = Recipe.all
@@ -37,6 +37,11 @@ class RecipesController < ApplicationController
     end
   end
 
+  def destroy
+    @recipe.destroy
+    flash[:success] = "Recipe deleted successfully"
+    redirect_to recipes_path
+  end
   private
 
   def set_recipe
