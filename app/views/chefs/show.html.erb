@@ -4,3 +4,6 @@
     <%= gravatar_for(@chef, size: 150) %>
   </div>
 </div>
+<h4 algin="center"><%= @chef.name%>'s recipes</h4>
+</br>
+<%= render 'recipes/recipes', obj: @recipes %>
