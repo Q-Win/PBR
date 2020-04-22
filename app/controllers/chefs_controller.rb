@@ -4,4 +4,8 @@ class ChefsController < ApplicationController
     @chef=Chef.new
   end
 
+  def create
+
+  end
+
 end
