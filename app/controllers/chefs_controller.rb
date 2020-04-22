@@ -1,5 +1,9 @@
 class ChefsController < ApplicationController
 
+  def show
+
+  end
+
   def new
     @chef=Chef.new
   end
@@ -7,7 +11,8 @@ class ChefsController < ApplicationController
   def create
     @chef = Chef.new(chef_params)
     if @chef.save
-
+      flash[:success] = "Welcome #{@chef.name}"
+      redirect_to chef_path(@chef)
     else
       render 'new'
     end
@@ -16,7 +21,7 @@ class ChefsController < ApplicationController
   private
 
   def chef_params
-    params.require(:chef).permit(:name,:email,:passowrd,:password_confirmation)
+    params.require(:chef).permit(:name, :email, :password, :password_confirmation)
   end
 
 end
