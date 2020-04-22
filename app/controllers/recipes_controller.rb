@@ -1,11 +1,13 @@
 class RecipesController < ApplicationController
+  
+
 
   def index
     @recipes = Recipe.all
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+
   end
 
   def new
@@ -21,6 +23,14 @@ class RecipesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
+
+  end
+
+  def update
+
   end
 
   private
