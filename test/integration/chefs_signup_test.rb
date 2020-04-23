@@ -10,7 +10,7 @@ class ChefsSignupTest < ActionDispatch::IntegrationTest
   test "reject an invalid signup" do
     get signup_path
     assert_no_difference "Chef.count" do
-      post chefs_path, params: { chef: { chefname: " ", email: " ", password: "password",
+      post chefs_path, params: { chef: { name: " ", email: " ", password: "password",
                                         password_confirmation: " " } }
     end
     assert_template 'chefs/new'
