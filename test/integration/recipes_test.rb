@@ -33,6 +33,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
   end
 
   test "create new valid recipe" do
+    #need to add login to create recipe
     get new_recipe_path
     assert_template 'recipes/new'
     name_of_recipe = "veg saute"
