@@ -19,6 +19,4 @@ class ChefsShowTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
   end
 
-
-
 end
