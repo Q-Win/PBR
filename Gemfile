@@ -63,6 +63,7 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
   gem 'launchy'
+  gem 'simplecov'
 end
 
 group :production do
