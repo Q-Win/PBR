@@ -1,5 +1,6 @@
 class IngredientsController < ApplicationController
    before_action :set_ingredient, only: [:show, :edit, :update]
+   before_action :require_admin, except: [:show, :index]
 
   def show
     @recipes = @ingredient.recipes
@@ -45,6 +46,13 @@ class IngredientsController < ApplicationController
 
   def set_ingredient
     @ingredient = Ingredient.find(params[:id])
+  end
+
+  def require_admin
+    if !logged_in? || (logged_in? and !current_user.admin?)
+      flash[:danger] = "Only admin users can perform that action"
+      redirect_to ingredients_path
+    end
   end
 
 end
