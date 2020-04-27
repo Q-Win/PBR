@@ -10,7 +10,7 @@ class IngredientsController < ApplicationController
   end
 
   def new
-
+    @ingredient = Ingredient.new
   end
 
   def create
