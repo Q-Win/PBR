@@ -1,5 +1,5 @@
 class IngredientsController < ApplicationController
-   before_action :set_ingredient, only: [:show]
+   before_action :set_ingredient, only: [:show, :edit]
 
   def show
     @recipes = @ingredient.recipes
