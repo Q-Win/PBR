@@ -1,0 +1,5 @@
+<%= render 'shared/page_title', title: "#{@ingredient.name}" %>
+
+<h4 algin="center"><%= @ingredient.name%>'s recipes</h4>
+</br>
+<%= render 'recipes/recipes', obj: @recipes %>
