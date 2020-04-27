@@ -1,5 +1,5 @@
 class IngredientsController < ApplicationController
-   before_action :set_ingredient, only: [:show, :edit]
+   before_action :set_ingredient, only: [:show, :edit, :update]
 
   def show
     @recipes = @ingredient.recipes
@@ -28,8 +28,13 @@ class IngredientsController < ApplicationController
 
   end
 
-  def updates
-
+  def update
+    if @ingredient.update(ingredient_params)
+      flash[:success] = "Ingredient name was updated successfully"
+      redirect_to @ingredient
+    else
+      render 'edit'
+    end
   end
 
   private
