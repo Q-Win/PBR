@@ -58,6 +58,7 @@
 <% end %>
 
 <% if @recipe.comments.count > 0 %>
+  <h3> Comments </h3>
   <%= render partial: 'comments/comments', object: @comments%>
 <% else %>
   </br>

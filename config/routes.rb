@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   resources :recipes
   resources :ingredients, except: [:destroy]
 
+  resources :recipes do
+    resources :comments, only: [:create]
+  end
+
   get '/signup', to: 'chefs#new'
   resources :chefs, except: [:new]
 
