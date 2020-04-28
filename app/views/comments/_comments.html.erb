@@ -4,3 +4,6 @@
 <% comments.each do |comment| %>
   <%= render(partial: "comments/comment", obj: comment) %>
 <%end%>
+<div align = "center">
+  <%= will_paginate comments %>
+</div>
