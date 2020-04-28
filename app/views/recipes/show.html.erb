@@ -7,6 +7,9 @@
   <hr />
   <%= simple_format(@recipe.description) %>
   <hr />
+  <% if @recipe.ingredients.any? %>
+    <p>Ingredients <%= render @recipe.ingredients%></p>
+  <% end %>
   <div class="pull-right">
     <p class="center">
       <em>Created by:</em>
@@ -28,3 +31,13 @@
     <%end%>
   </div>
 </div>
+
+<% if @recipe.comments != 0 %>
+  <%= render partial: 'comments/comments', object: @comments%>
+<%else%>
+  <div class = "row">
+    <div class="col-md-8">
+      <h3> No comments </h3>
+    </div>
+  </div>
+<% end %>
