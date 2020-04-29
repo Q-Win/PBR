@@ -8,7 +8,7 @@ class Recipe < ApplicationRecord
   has_many :comments, dependent: :destroy
 
 
-  def add_ingredients(ingredient_data)
+  def add_ingredients_from_string(ingredient_data)
     ingredients = ingredient_data.split(",")
     ingredients.each do |ingredient|
       ingredient_components = ingredient.split("-")

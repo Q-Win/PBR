@@ -37,12 +37,12 @@ class RecipeTest < ActiveSupport::TestCase
     assert_not @recipe.valid?
   end
 
-  test "can add ingredients to recipe" do
+  test "can add ingredients to recipe from a properly formatted string" do
     @ingredient = @recipe.ingredients.create(name: "Carrot")
     @ingredient2 = @recipe.ingredients.create(name: "Onion")
     ingredient_data = "1/2-cups-carrots,0.5-cups-onions"
 
-    @recipe.add_ingredients(ingredient_data)
+    @recipe.add_ingredients_from_string(ingredient_data)
     
   end
 
