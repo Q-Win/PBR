@@ -8,8 +8,8 @@ class Recipe < ApplicationRecord
   has_many :comments, dependent: :destroy
 
 
-  def add_ingredients
+  def add_ingredients(ingredient_data)
 
   end
-  
+
 end

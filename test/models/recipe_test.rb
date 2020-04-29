@@ -41,6 +41,8 @@ class RecipeTest < ActiveSupport::TestCase
     @ingredient = Ingredient.create(name: "Carrot")
     @ingredient2 = Ingredient.create(name: "Onion")
 
+    
+
 
   end
 
