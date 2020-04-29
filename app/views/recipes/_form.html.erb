@@ -10,7 +10,7 @@
   </div>
   <div class="form-group">
     <%= f.collection_check_boxes :ingredient_ids, @ingredients, :id,:name do |cb| %>
-      <% cb.label(class: "check-box-inline input-checkbox") {cb.check_box(class: "checkbox")} + cb.text%>
+      <% cb.label(class: "check-box-inline input-checkbox") {cb.check_box(class: "checkbox")} + cb.text %>
     <% end %>
   </div>
   <div class="form-group">

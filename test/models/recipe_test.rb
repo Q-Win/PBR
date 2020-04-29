@@ -37,4 +37,12 @@ class RecipeTest < ActiveSupport::TestCase
     assert_not @recipe.valid?
   end
 
+  test "can add ingredients to recipe" do
+    @ingredient = Ingredient.create(name: "Carrot")
+    @ingredient2 = Ingredient.create(name: "Onion")
+
+
+  end
+
+
 end
