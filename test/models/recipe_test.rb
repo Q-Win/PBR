@@ -38,9 +38,9 @@ class RecipeTest < ActiveSupport::TestCase
   end
 
   test "can add ingredients to recipe from a properly formatted string" do
-    @ingredient = @recipe.ingredients.create(name: "Carrot")
-    @ingredient2 = @recipe.ingredients.create(name: "Onion")
-    ingredient_data = "1/2-cups-carrot,0.5-cups-onion"
+    @ingredient = @recipe.ingredients.create(name: "Carrots")
+
+    ingredient_data = "1/2-cups-Carrots,0.5-cups-Onions"
 
     @recipe.add_ingredients_from_string(ingredient_data)
 

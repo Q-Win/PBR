@@ -12,7 +12,19 @@ class Recipe < ApplicationRecord
     ingredients = ingredient_data.split(",")
     ingredients.each do |ingredient|
       ingredient_components = ingredient.split("-")
-      # debugger
+      name = ingredient_components[2].downcase.singularize
+      quantity = ingredient_components[0]
+      unit = ingredient_components[1].downcase.singularize
+      if Ingredient.find_by(name: name) == nil
+        Ingredient.create(name: name)
+      end
+      id = Ingredient.find_by(name: name).id
+
+      if RecipeIngredient.find_by(ingredient_id: id) == nil
+        RecipeIngredient.create(recipe_id: self.id, ingredient_id: id, quantity: quantity, unit: unit)
+      else
+        RecipeIngredient.find_by(ingredient_id: id).update(recipe_id: self.id, ingredient_id: id, quantity: quantity, unit: unit)
+      end
     end
   end
 
