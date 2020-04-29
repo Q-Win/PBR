@@ -12,7 +12,7 @@ class Recipe < ApplicationRecord
     ingredients = ingredient_data.split(",")
     ingredients.each do |ingredient|
       ingredient_components = ingredient.split("-")
-      debugger
+      # debugger
     end
   end
 
