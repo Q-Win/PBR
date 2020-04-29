@@ -39,11 +39,13 @@ class RecipeTest < ActiveSupport::TestCase
 
   test "can add ingredients to recipe from a properly formatted string" do
     @ingredient = @recipe.ingredients.create(name: "Carrots")
-
+    assert_equal @recipe.ingredients.count, 1
     ingredient_data = "1/2-cups-Carrots,0.5-cups-Onions"
 
     @recipe.add_ingredients_from_string(ingredient_data)
-
+    assert_equal @recipe.ingredients.count, 2
+    assert_equal @recipe.recipe_ingredients[1].unit, "cup"
+    assert_equal @recipe.recipe_ingredients[0].quantity, "1/2"
   end
 
 
