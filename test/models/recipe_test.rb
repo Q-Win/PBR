@@ -38,12 +38,12 @@ class RecipeTest < ActiveSupport::TestCase
   end
 
   test "can add ingredients to recipe" do
-    @ingredient = Ingredient.create(name: "Carrot")
-    @ingredient2 = Ingredient.create(name: "Onion")
+    @ingredient = @recipe.ingredients.create(name: "Carrot")
+    @ingredient2 = @recipe.ingredients.create(name: "Onion")
+    ingredient_data = "1/2-cups-carrots,0.5-cups-onions"
 
+    @recipe.add_ingredients(ingredient_data)
     
-
-
   end
 
 

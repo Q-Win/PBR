@@ -9,7 +9,11 @@ class Recipe < ApplicationRecord
 
 
   def add_ingredients(ingredient_data)
-
+    ingredients = ingredient_data.split(",")
+    ingredients.each do |ingredient|
+      ingredient_components = ingredient.split("-")
+      debugger
+    end
   end
 
 end
