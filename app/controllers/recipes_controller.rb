@@ -46,6 +46,13 @@ class RecipesController < ApplicationController
     flash[:success] = "Recipe deleted successfully"
     redirect_to recipes_path
   end
+
+  def pbrbeta
+    pbrbeta_service = PbrbetaService.new
+    pbrbeta_service.add_recipes_to_database
+    redirect_to recipes_path
+  end
+
   private
 
   def set_recipe

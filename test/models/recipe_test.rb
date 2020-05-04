@@ -29,6 +29,7 @@ class RecipeTest < ActiveSupport::TestCase
 
   test "description should NOT be less than 5 characters" do
     @recipe.description = "aaa"
+
     assert_not @recipe.valid?
   end
 
@@ -43,7 +44,7 @@ class RecipeTest < ActiveSupport::TestCase
     ingredient_data = "1/2 cups Carrots,0.5 cups Onions,2 Cups Chick Peas"
 
     @recipe.add_ingredients_from_string(ingredient_data)
-    
+
     assert_equal @recipe.ingredients.count, 3
     assert_equal @recipe.recipe_ingredients[1].unit, "cup"
     assert_equal @recipe.recipe_ingredients[0].quantity, "1/2"

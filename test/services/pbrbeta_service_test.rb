@@ -10,9 +10,9 @@ class PbrbetaServiceTest < ActionDispatch::IntegrationTest
   test "it can get a JSON" do
     pbrbeta_service = PbrbetaService.new
     recipes = pbrbeta_service.recipe_data
-    
+
     assert_not_nil recipes
-    assert_equal recipes[0][:name],"Minestrone"
+    assert_equal recipes[0][:name],"Whole Grain Pancakes"
     assert recipes, Array
   end
 

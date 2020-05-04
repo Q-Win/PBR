@@ -4,6 +4,15 @@ class PbrbetaService
     get_json("/api/v1/recipes")
   end
 
+  def add_recipes_to_database
+    recipes = recipe_data
+
+    recipes.each do |r|
+      recipe = Recipe.create(name: r[:name], description: "please fill this out",chef_id: 2, instructions: r[:directions])
+      recipe.add_ingredients_from_string(r[:ingredients])
+    end
+  end
+
   private
 
   def get_json(url)
