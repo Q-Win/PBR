@@ -11,7 +11,7 @@ class Recipe < ApplicationRecord
   def add_ingredients_from_string(ingredient_data)
     ingredients = ingredient_data.split(",")
     ingredients.each do |ingredient|
-      ingredient_components = ingredient.split("-")
+      ingredient_components = ingredient.split(" ")
       name = ingredient_components[2..-1].join.downcase.singularize
       quantity = ingredient_components[0]
       unit = ingredient_components[1].downcase.singularize
