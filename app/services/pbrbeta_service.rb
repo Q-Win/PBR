@@ -8,7 +8,7 @@ class PbrbetaService
     recipes = recipe_data
 
     recipes.each do |r|
-      recipe = Recipe.create(name: r[:name], description: "please fill this out",chef_id: 2, instructions: r[:directions])
+      recipe = Recipe.create(name: r[:name], description: "please fill this out",chef_id: 2, instructions: r[:directions], notes: r[:notes])
       recipe.add_ingredients_from_string(r[:ingredients])
     end
   end

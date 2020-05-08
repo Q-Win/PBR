@@ -19,16 +19,9 @@ class Recipe < ApplicationRecord
       if Ingredient.find_by(name: name) == nil
         Ingredient.create(name: name)
       end
-      if Ingredient.find_by(name: name) == nil
-        debugger
-      end
-      id = Ingredient.find_by(name: name).id
 
-      # if RecipeIngredient.find_by(ingredient_id: id) == nil
-        RecipeIngredient.create(recipe_id: self.id, ingredient_id: id, quantity: quantity, unit: unit)
-      # else
-        # RecipeIngredient.find_by(ingredient_id: id).update(recipe_id: self.id, ingredient_id: id, quantity: quantity, unit: unit)
-      # end
+      id = Ingredient.find_by(name: name).id
+      RecipeIngredient.create(recipe_id: self.id, ingredient_id: id, quantity: quantity, unit: unit)
     end
   end
 
