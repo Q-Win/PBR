@@ -12,5 +12,8 @@ RSpec.describe "categories_show", type: :feature do
     visit new_category_path
 
     expect(page).to have_content("Name")
+    page.fill_in 'Name', with: 'Whole Grain'
+    click_button("Add category")
+    expect(Category.count).to eq(4)
   end
 end
