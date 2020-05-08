@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'pages/home', to: 'pages#home'
 
   resources :recipes
+  resources :categories
   resources :ingredients, except: [:destroy]
 
   resources :recipes do

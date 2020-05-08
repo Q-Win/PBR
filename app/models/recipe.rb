@@ -7,6 +7,8 @@ class Recipe < ApplicationRecord
   has_many :recipe_ingredients
   has_many :ingredients, through: :recipe_ingredients
   has_many :comments, dependent: :destroy
+  has_many :category_recipes
+  has_many :categories, through: :category_recipes
 
 
   def add_ingredients_from_string(ingredient_data)

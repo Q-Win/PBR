@@ -4,11 +4,11 @@ class PbrbetaService
     get_json("/api/v1/recipes")
   end
 
-  def add_recipes_to_database
+  def add_recipes_to_database(user_id)
     recipes = recipe_data
 
     recipes.each do |r|
-      recipe = Recipe.create(name: r[:name], description: "please fill this out",chef_id: 2, instructions: r[:directions], notes: r[:notes])
+      recipe = Recipe.create(name: r[:name], description: "please fill this out",chef_id: user_id, instructions: r[:directions], notes: r[:notes])
       recipe.add_ingredients_from_string(r[:ingredients])
     end
   end

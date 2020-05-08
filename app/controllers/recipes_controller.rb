@@ -49,7 +49,7 @@ class RecipesController < ApplicationController
 
   def pbrbeta
     pbrbeta_service = PbrbetaService.new
-    pbrbeta_service.add_recipes_to_database
+    pbrbeta_service.add_recipes_to_database(current_user.id)
     redirect_to recipes_path
   end
 

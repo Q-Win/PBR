@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_08_143924) do
+ActiveRecord::Schema.define(version: 2020_05_08_161109) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -19,10 +22,8 @@ ActiveRecord::Schema.define(version: 2020_05_08_143924) do
   end
 
   create_table "category_recipes", force: :cascade do |t|
-    t.integer "categories_id"
-    t.integer "recipes_id"
-    t.index ["categories_id"], name: "index_category_recipes_on_categories_id"
-    t.index ["recipes_id"], name: "index_category_recipes_on_recipes_id"
+    t.integer "recipe_id"
+    t.integer "category_id"
   end
 
   create_table "chefs", force: :cascade do |t|
