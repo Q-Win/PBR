@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "categories_show", type: :feature do
+RSpec.describe "categories_edit", type: :feature do
 
   before(:each) do
     @category1 = Category.create(name: "Oil Free")

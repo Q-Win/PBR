@@ -27,7 +27,7 @@ class CategoriesController < ApplicationController
 
   end
 
-  def new
+  def update
 
   end
 
