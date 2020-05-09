@@ -8,7 +8,7 @@ RSpec.describe "categories_show", type: :feature do
     @category3 = Category.create(name: "Italian")
   end
 
-  it "displays category show" do
+  it "create new category" do
     visit new_category_path
 
     expect(page).to have_content("Name")
