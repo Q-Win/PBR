@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe "categories_new", type: :feature do
 
   before(:each) do
+    Category.delete_all
     @category1 = Category.create(name: "Oil Free")
     @category2 = Category.create(name: "Mexican")
     @category3 = Category.create(name: "Italian")
@@ -15,5 +16,6 @@ RSpec.describe "categories_new", type: :feature do
     page.fill_in 'Name', with: 'Whole Grain'
     click_button("Add category")
     expect(Category.count).to eq(4)
+
   end
 end

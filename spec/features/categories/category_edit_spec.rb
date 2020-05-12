@@ -10,6 +10,6 @@ RSpec.describe "categories_edit", type: :feature do
 
     page.fill_in 'category_name', with: 'South West'
     click_button("Edit category")
-    expect(Category.first.name).to eq('south west')
+    expect(Category.last.name).to eq('south west')
   end
 end
