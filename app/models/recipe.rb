@@ -27,4 +27,8 @@ class Recipe < ApplicationRecord
     end
   end
 
+  def ingredient_quantaties
+
+  end
+
 end
