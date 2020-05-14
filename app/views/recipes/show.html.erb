@@ -1,25 +1,25 @@
 <%= render 'shared/page_title',title: @recipe.name%>
 
-<div class="col-md-8 card">
+<div class="col-md-10 card">
   <p class="center description">
     <strong>Steps</strong>
   </p>
   <hr />
   <%= simple_format(@recipe.description) %>
   <hr />
+  <%= simple_format(@recipe.instructions) %>
+  <hr />
+  <%= simple_format(@recipe.instructions) %>
+  <hr />
   <% if @recipe.ingredients.any? %>
     <p>Ingredients <%= render @recipe.ingredients%></p>
   <% end %>
   <div class="pull-right">
     <p class="center">
-      <em>Created by:</em>
+      <em>Created by: <%= @recipe.chef.name.capitalize%></em>
     </p>
-    <p class="center">
-      <%= link_to gravatar_for(@recipe.chef), recipes_path %>
-    </p>
-    <p class="center">
-      <small>  <%= @recipe.chef.name.capitalize%> </small>
-    </p>
+
+    <h1>test</h1>
   </div>
   <div class="recipe-actions">
     <%= link_to "Return to recipes listing", recipes_path, class: "btn btn-primary" %>
