@@ -17,10 +17,14 @@ RSpec.describe Recipe, name: :model do
    @ingredient2 = Ingredient.create(name: "chick peas")
    @ingredient3 = Ingredient.create(name: "pasta")
    RecipeIngredient.create(recipe_id: @recipe.id, ingredient_id: @ingredient1.id, unit: "cup", quantity: "1")
+   RecipeIngredient.create(recipe_id: @recipe.id, ingredient_id: @ingredient3.id, unit: "oz", quantity: "8")
  end
 
   it 'can return ingredient quantities' do
-    
+    ingredients = @recipe.ingredient_quantaties
+
+    expect(ingredients.count).to eq(2)
+    expect(ingredients[0]).to eq("1 cup carrot")
   end
 
 end
