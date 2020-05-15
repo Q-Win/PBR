@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @recipe.comments.paginate(page: params[:page], per_page: 5)
+    @ingredient_quantaties = @recipe.ingredient_quantaties
   end
 
   def new

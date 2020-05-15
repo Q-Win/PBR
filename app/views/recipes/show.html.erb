@@ -7,7 +7,11 @@
   <hr />
   <%= simple_format(@recipe.description) %>
   <hr />
-  <%= simple_format(@recipe.instructions) %>
+  <ul>
+    <% @ingredient_quantaties.each do |ing| %>
+      <li><%= ing %></li>
+    <%end%>
+  </ul>
   <hr />
   <%= simple_format(@recipe.instructions) %>
   <hr />
