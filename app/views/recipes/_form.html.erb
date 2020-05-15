@@ -9,6 +9,10 @@
     <%= f.text_area :description, class: "form-control", rows: 10,  placeholder: "Recipe description"%>
   </div>
   <div class="form-group">
+    <%= f.label :instructions %>
+    <%= f.text_area :instructions, class: "form-control", rows: 10,  placeholder: "Recipe description"%>
+  </div>
+  <div class="form-group">
     <%= f.collection_check_boxes :ingredient_ids, @ingredients, :id,:name do |cb| %>
       <% cb.label(class: "check-box-inline input-checkbox") {cb.check_box(class: "checkbox")} + cb.text %>
     <% end %>
