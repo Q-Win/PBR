@@ -30,6 +30,7 @@ class Recipe < ApplicationRecord
   def ingredient_quantaties
     ingredients.map do |ing|
       ri = RecipeIngredient.find_by(recipe_id: self.id, ingredient_id: ing.id)
+      #improve below
       ri.quantity + " " + ri.unit + " " + ing.name
     end
   end
