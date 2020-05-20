@@ -7,7 +7,7 @@ class IngredientsController < ApplicationController
   end
 
   def index
-    @ingredients = Ingredient.paginate(page: params[:page], per_page: 5)
+    @ingredients = Ingredient.paginate(page: params[:page], per_page: 20).order(:name)
   end
 
   def new
