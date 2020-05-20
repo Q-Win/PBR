@@ -15,6 +15,11 @@
   <hr />
   <%= simple_format(@recipe.instructions) %>
   <hr />
+  <% if @recipe.notes != nil %>
+    <h3>notes:</h3> <p> <%=@recipe.notes%></p>
+    <hr />
+  <%end%>
+
   <% if @recipe.ingredients.any? %>
     <p>Ingredients <%= render @recipe.ingredients%></p>
   <% end %>
