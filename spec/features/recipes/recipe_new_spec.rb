@@ -23,9 +23,12 @@ RSpec.describe "recipes_new", type: :feature do
     expect(page).to have_content("Description")
     expect(page).to have_content("Instructions")
     expect(page).to have_content("Notes")
-    # page.fill_in 'Name', with: 'Whole Grain'
-    # click_button("Add Recipe")
-    # expect(Recipe.count).to eq(4)
+    page.fill_in :recipe_name, with: 'Bread'
+    page.fill_in :recipe_description, with: 'Bread yumm'
+    page.fill_in :recipe_instructions, with: 'bake da Bread'
+    page.fill_in :recipe_notes, with: 'Bread lasts 3 days'
+    click_button("Add recipe")
+    expect(Recipe.count).to eq(4)
 
   end
 end
