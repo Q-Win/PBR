@@ -1,0 +1,11 @@
+<h1><%=@recipe.name%></h1>
+<form action="/action_page.php">
+  <% @ingredients.each do |i|%>
+    <div>
+      <%name = Ingredient.find(i.ingredient_id).name%>
+      <%=name%>
+      <label for="quantity">Quantiy:</label><br>
+      <input type="text" id=<%="quantity" + name%> name="fname">
+    </div>
+  <%end%>
+</form>

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :recipes do
     resources :comments, only: [:create]
-    resources :recipe_ingredients, only: [:edit, :update]
+    resources :recipe_ingredients, only: [:update, :index]
   end
 
   get '/signup', to: 'chefs#new'
