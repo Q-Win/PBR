@@ -5,7 +5,7 @@ class RecipeIngredient < ApplicationRecord
 
   after_save do |ri|
     if ri.display_name == nil
-      ri.display_name = Ingredient.find(ri.ingredient_id).name
+      ri.update(display_name: Ingredient.find(ri.ingredient_id).name)
     end
   end
 
