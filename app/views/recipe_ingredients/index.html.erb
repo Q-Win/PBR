@@ -2,6 +2,10 @@
 
 <% @ingredients.each do |i| %>
   <%= form_for i do |f|%>
+    <%= f.label :display_name %>
+    <%= f.text_field :display_name %>
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity %>
     <%= f.label :unit %>
     <%= f.text_field :unit %>
     <%= f.submit  %>
