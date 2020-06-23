@@ -5,5 +5,8 @@ class RecipeIngredientsController < ApplicationController
     @units = RecipeIngredient.all.pluck(:unit).uniq
   end
 
+  def edit
+
+  end
 
 end
