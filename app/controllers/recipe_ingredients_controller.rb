@@ -7,7 +7,13 @@ class RecipeIngredientsController < ApplicationController
 
 
   def update
-    
+
+  end
+
+  private
+
+  def recipe_ingredient_params
+    params.require(:recipe_ingredient).permit(:display_name, :unit, :quantity)
   end
 
 end
