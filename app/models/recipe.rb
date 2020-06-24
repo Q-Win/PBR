@@ -31,7 +31,12 @@ class Recipe < ApplicationRecord
     ingredients.map do |ing|
       ri = RecipeIngredient.find_by(recipe_id: self.id, ingredient_id: ing.id)
       #improve below
-      ri.quantity + " " + ri.unit + " " + ing.name
+
+      if ri.quantity == nil || ri.unit == nil
+        "ingredient quantity not yet filled in"
+      else
+        ri.quantity + " " + ri.unit + " " + ing.name
+      end
     end
   end
 
