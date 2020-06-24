@@ -35,7 +35,7 @@ class Recipe < ApplicationRecord
       if ri.quantity == nil || ri.unit == nil
         "ingredient quantity not yet filled in"
       else
-        ri.quantity + " " + ri.unit + " " + ing.name
+        ri.quantity + " " + ri.unit + " " + ri.display_name
       end
     end
   end
