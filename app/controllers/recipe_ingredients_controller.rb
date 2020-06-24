@@ -7,7 +7,15 @@ class RecipeIngredientsController < ApplicationController
 
 
   def update
-
+    
+    @recipe_ingredient = RecipeIngredient.find(params[:id])
+    @recipe = Recipe.find(@recipe_ingredient.recipe_id)
+    if @recipe_ingredient.update(recipe_ingredient_params)
+      flash[:success] = "Recipe was updated successfully!"
+      redirect_to recipe_recipe_ingredients_path(@recipe)
+    else
+      redirect_to recipe_recipe_ingredients_path(@recipe)
+    end
   end
 
   private
