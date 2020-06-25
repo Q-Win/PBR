@@ -6,11 +6,13 @@
 
 <div align="center">
   <% @chefs.each do |chef| %>
-    <div >
-      <ul class="list-group">
-        <%= link_to chef.name.capitalize, chef_path(chef), class: "list-group-item" %>
-        <small><%=chef.recipes.count%> recipes</small>
-      </ul>
+    <div class="card">
+      <div class="card-body">
+        <ul class="list-group">
+          <%= link_to chef.name.capitalize, chef_path(chef), class: "list-group-item" %>
+          <small><%=chef.recipes.count%> recipes</small>
+        </ul>
+    </div>
     </div>
   <% end %>
 </div>
