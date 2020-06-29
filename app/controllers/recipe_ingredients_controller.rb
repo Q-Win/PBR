@@ -27,7 +27,7 @@ class RecipeIngredientsController < ApplicationController
     recipe_ingredients.each do |ri|
       recipe_id = Recipe.find_by(name: ri[:rname]).id
       ingredient_id = Ingredient.find_by(name: ri[:iname]).id
-      RecipeIngredient.create(recipe_id: recipe_id, ingredient_id: ingredient_id, display_name: ri[:display_name], unit: ri[:unit], quantity: ri[:quantity])
+      RecipeIngredient.create(recipe_id: recipe_id, ingredient_id: ingredient_id, unit: ri[:unit], quantity: ri[:quantity])
     end
     redirect_to recipes_path
   end
