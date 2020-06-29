@@ -60,6 +60,8 @@ class RecipesController < ApplicationController
     recipes.each do |r|
       Recipe.create(name: r[:name], description: r[:description], instructions: r[:instructions], notes: r[:notes], chef_id: current_user.id)
     end
+
+    redirect_to recipes_path
   end
 
   private
