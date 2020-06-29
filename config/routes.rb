@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  get '/addi', to: 'ingredients#add_ingredients'
+  
 
   get 'pbrbeta', to: 'recipes#pbrbeta'
 end
