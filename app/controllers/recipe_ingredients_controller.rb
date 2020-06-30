@@ -27,7 +27,7 @@ class RecipeIngredientsController < ApplicationController
     recipe_ingredients.each do |ri|
       recipe_id = Recipe.find_by(name: ri[:rname]).id
       if (Ingredient.find_by(name: ri[:iname]) == nil)
-        puts(ri[:iname])
+        puts ri[:iname]
       end
       # ingredient_id = Ingredient.find_by(name: ri[:iname]).id
       # if (ingredient_id != nil && recipe_id != nil)
