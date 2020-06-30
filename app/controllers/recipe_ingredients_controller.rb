@@ -27,9 +27,9 @@ class RecipeIngredientsController < ApplicationController
     recipe_ingredients.each do |ri|
       recipe_id = Recipe.find_by(name: ri[:rname]).id
       ingredient_id = Ingredient.find_by(name: ri[:iname]).id
-      if (ingredient_id != nil && recipe_id != nil)
-        RecipeIngredient.create(recipe_id: recipe_id, ingredient_id: ingredient_id, unit: ri[:unit], quantity: ri[:quantity])
-      end
+      # if (ingredient_id != nil && recipe_id != nil)
+      #   RecipeIngredient.create(recipe_id: recipe_id, ingredient_id: ingredient_id, unit: ri[:unit], quantity: ri[:quantity])
+      # end
     end
     redirect_to recipes_path
   end
