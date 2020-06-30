@@ -35,7 +35,7 @@ class RecipeIngredientsController < ApplicationController
       #   RecipeIngredient.create(recipe_id: recipe_id, ingredient_id: ingredient_id, unit: ri[:unit], quantity: ri[:quantity])
       # end
     end
-    flash[:success] = names
+    flash[:success] = names.join(', ')
     redirect_to recipes_path
   end
 
