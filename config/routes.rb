@@ -22,5 +22,4 @@ Rails.application.routes.draw do
 
 
   get 'pbrbeta', to: 'recipes#pbrbeta'
-  get 'getri', to: 'recipe_ingredients#get_recipeingredients'
 end
