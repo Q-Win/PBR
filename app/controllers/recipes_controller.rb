@@ -31,6 +31,7 @@ class RecipesController < ApplicationController
 
   def edit
     @ingredients = Ingredient.all.order(:name)
+    @categories = Category.all.order(:name)
   end
 
   def update
