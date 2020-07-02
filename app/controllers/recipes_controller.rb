@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    @ingredients = Ingredient.all
+    @ingredients = Ingredient.all.order(:name)
     @categories = Category.all.order(:name)
   end
 
